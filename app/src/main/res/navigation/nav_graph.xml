@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/adminPainelFragment">
+
+    <fragment
+        android:id="@+id/postProductsFragment"
+        android:name="com.soniaraujo.cestafeiraapp.listProductsAdminFragment"
+        android:label="fragment_post_products"
+        tools:layout="@layout/fragment_list_products_admin" >
+        <action
+            android:id="@+id/action_postProductsFragment_to_adminPainelFragment"
+            app:destination="@id/adminPainelFragment"
+            app:popUpTo="@id/adminPainelFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminPainelFragment"
+        android:name="com.soniaraujo.cestafeiraapp.adminPainelFragment"
+        android:label="fragment_admin_painel"
+        tools:layout="@layout/fragment_admin_painel" >
+        <action
+            android:id="@+id/action_adminPainelFragment_to_postProductsFragment"
+            app:destination="@id/postProductsFragment"
+            app:popUpTo="@id/postProductsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_adminPainelFragment_to_formProductFragment"
+            app:destination="@id/formProductFragment"
+            app:popUpTo="@id/formProductFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/formProductFragment"
+        android:name="com.soniaraujo.cestafeiraapp.formProductFragment"
+        android:label="fragment_form_product"
+        tools:layout="@layout/fragment_form_product" >
+        <action
+            android:id="@+id/action_formProductFragment_to_adminPainelFragment"
+            app:destination="@id/adminPainelFragment"
+            app:popUpTo="@id/adminPainelFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
